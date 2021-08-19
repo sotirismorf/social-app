@@ -9,7 +9,7 @@ app.use(express.json()); //req.body
 
 //ROUTES//
 
-//create a todo
+//create a post
 
 app.post("/api/posts", async (req, res) => {
   try {
@@ -25,10 +25,9 @@ app.post("/api/posts", async (req, res) => {
   }
 });
 
-//get all todos
+//get all post
 
 app.get("/api/posts", async (req, res) => {
-  console.log("hllekfjf");
   try {
     const allPosts = await pool.query("SELECT * FROM posts");
     res.json(allPosts.rows);
@@ -37,12 +36,12 @@ app.get("/api/posts", async (req, res) => {
   }
 });
 
-//get a todo
+//get a post 
 
 app.get("/api/posts/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const todo = await pool.query("SELECT * FROM todo WHERE todo_id = $1", [
+    const todo = await pool.query("SELECT * FROM posts WHERE post_id = $1", [
       id
     ]);
 
@@ -80,6 +79,32 @@ app.delete("/todos/:id", async (req, res) => {
     res.json("Todo was deleted!");
   } catch (err) {
     console.log(err.message);
+  }
+});
+
+app.post("/api/users", async (req, res) => {
+  try {
+    const { username } = req.body;
+    const newPost = await pool.query(
+      "INSERT INTO users (username) VALUES($1) RETURNING *",
+      [username]
+    );
+    res.json(newPost.rows[0]);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
+app.get("/api/users/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await pool.query("SELECT * FROM users WHERE id = $1", [
+      id
+    ]);
+
+    res.json(user.rows[0]);
+  } catch (err) {
+    console.error(err.message);
   }
 });
 
