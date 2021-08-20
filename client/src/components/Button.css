@@ -1,0 +1,12 @@
+.NavButton {
+	text-decoration: none;
+	padding: 10px;
+	font-size: 25px;
+	border-bottom: 2px solid;
+	color: white;
+	transition: 0.1s;
+}
+
+.Focused {
+	border-color: coral;
+}

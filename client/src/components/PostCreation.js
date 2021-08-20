@@ -1,5 +1,4 @@
 import { useState } from "react";
-import './App.css';
 
 function PostCreation() {
 	const [description, setDescription] = useState("");
@@ -22,7 +21,7 @@ function PostCreation() {
 
 	return (
 		<div className="Box">
-			<h1>Post Something!</h1>
+			<h1 class="mt-0">Post Something!</h1>
 			<form className="Line" onSubmit={onSubmitForm}>	
 				<input
 					type="text"

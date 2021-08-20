@@ -1,10 +1,8 @@
-import './App.css';
-
 function Post(props) {
 	return (
 		<div className="Box">
-			<h3>Anon posted:</h3>
-			<h1>{props.description}</h1>
+			<p class="mt-0">Anon posted:</p>
+			<p class="my-0">{props.description}</p>
 		</div>
   );
 }
