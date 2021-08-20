@@ -1,7 +1,9 @@
 function Post(props) {
 	return (
 		<div className="Box">
-			<p class="mt-0">Anon posted:</p>
+			<div>
+				<span class="mt-0 bold">Anon posted:</span>
+			</div>
 			<p class="my-0">{props.description}</p>
 		</div>
   );

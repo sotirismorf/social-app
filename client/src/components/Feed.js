@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PostCreation from './PostCreation'
 import Post from './Post.js'
 
 function Feed() {
@@ -23,6 +24,7 @@ function Feed() {
 
 	return (
 		<div className="Feed">
+			<PostCreation />
 			{posts.slice(0).reverse().map(post => (<Post description={post.description}/>))}
 		</div>
   );

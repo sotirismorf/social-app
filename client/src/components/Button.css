@@ -1,12 +1,17 @@
 .NavButton {
-	text-decoration: none;
 	padding: 10px;
 	font-size: 25px;
-	border-bottom: 2px solid;
+	font-weight: bold;
+	border-bottom: 2px solid transparent;
 	color: white;
 	transition: 0.1s;
 }
 
+.NavButton:hover {
+	color:grey;
+}
+
 .Focused {
 	border-color: coral;
+	transition: 1s;
 }
