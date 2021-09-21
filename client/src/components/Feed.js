@@ -4,23 +4,25 @@ import Post from './Post.js'
 
 function Feed() {
 
-  const [posts, setPosts] = useState([]);
+	const [posts, setPosts] = useState([]);
+	const [error, setError] = useState("");
 
 
-  const getPosts = async () => {
-    try {
-      const response = await fetch("https://www.sotirismorfakidis.xyz/api/posts");
-      const jsonData = await response.json();
+	const getPosts = async () => {
+		try {
+		const response = await fetch("https://www.sotirismorfakidis.com/api/posts");
+		const jsonData = await response.json();
 
-      setPosts(jsonData);
-    } catch (err) {
-      console.error(err.message);
-    }
-  };
+		setPosts(jsonData);
+		} catch (err) {
+			console.error(err.message);
+		}
+	};
+	
 
-  useEffect(() => {
-    getPosts();
-  }, []);
+	useEffect(() => {
+		getPosts();
+	}, []);
 
 	return (
 		<div className="Feed">

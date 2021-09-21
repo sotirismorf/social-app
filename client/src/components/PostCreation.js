@@ -25,7 +25,6 @@ function PostCreation() {
 			<form className="Line" onSubmit={onSubmitForm}>	
 				<input
 					type="text"
-					className="Form"
 					value={description}
 					onChange={e => setDescription(e.target.value)}
 					placeholder="Type something...">

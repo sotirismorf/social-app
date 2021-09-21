@@ -1,0 +1,25 @@
+html, body {
+	height: 100%;
+}
+
+.SignIn {
+	display: flex;
+	justify-content: center;
+}
+
+.Column {
+	position: absolute;
+	top: 25%;
+}
+
+.SignInForm {
+	width: 450px;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	padding: 20px;
+	border-radius: 20px;
+	border-style: none;
+	background-color: #101010;
+}
+ 
