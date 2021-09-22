@@ -1,4 +1,4 @@
-.NavButton {
+.inactive {
 	padding: 10px;
 	font-size: 25px;
 	font-weight: bold;
@@ -7,11 +7,11 @@
 	transition: 0.1s;
 }
 
-.NavButton:hover {
+.inactive:hover {
 	color:grey;
 }
 
-.Focused {
+.active {
 	border-color: coral;
 	transition: 1s;
 }

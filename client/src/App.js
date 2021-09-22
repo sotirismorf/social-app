@@ -1,9 +1,8 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import Home from './components/Home.js'
-import Navigation from './components/Navigation.js'
 import Friends from './components/Friends.js'
-import SignIn from './components/SignIn.js'
+import SignIn from './pages/SignIn.js'
 
 function App() {
 	return (

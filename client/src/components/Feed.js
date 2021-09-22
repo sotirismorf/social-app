@@ -5,8 +5,6 @@ import Post from './Post.js'
 function Feed() {
 
 	const [posts, setPosts] = useState([]);
-	const [error, setError] = useState("");
-
 
 	const getPosts = async () => {
 		try {

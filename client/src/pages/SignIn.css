@@ -1,25 +1,25 @@
 html, body {
 	height: 100%;
-}
-
-.SignIn {
 	display: flex;
 	justify-content: center;
 }
 
-.Column {
-	position: absolute;
-	top: 25%;
+.container {
+	transform: translateY(50%);
+	width: 450px;
+	display: flex;
+	justify-content: center;
+	row-gap: 10px;	
+	flex-direction: column;
+	padding: 20px;
+	border-radius: 20px;
+	background-color: #101010;
+	text-align: center;
 }
 
 .SignInForm {
-	width: 450px;
 	display: flex;
+	row-gap: 10px;
 	flex-direction: column;
-	text-align: center;
-	padding: 20px;
-	border-radius: 20px;
-	border-style: none;
-	background-color: #101010;
 }
  

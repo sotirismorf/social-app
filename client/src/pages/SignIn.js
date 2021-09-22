@@ -6,9 +6,10 @@ import React, { useRef, useState } from "react"
 import { Link, useHistory } from "react-router-dom"
 
 function Signup() {
-
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
+	const emailRef = useRef()
+	const passwordRef = useRef()
+	//const [email, setEmail] = useState("");
+	//const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
 
 	const history = useHistory();
@@ -16,16 +17,15 @@ function Signup() {
 	async function onSubmitForm(e) {
 		e.preventDefault();
 
-		signInWithEmailAndPassword(auth, email, password)
+		signInWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value)
 			.then((userCredential) => {
-				// Signed in 
 				const user = userCredential.user;
+				console.log("hello there")
 				history.push("/")
 			})
 			.catch((error) => {
 				const errorCode = error.code;
 				const errorMessage = error.message;
-				console.log(errorMessage);
 				setError("Failed to log in");
 			});
 	};
@@ -33,30 +33,30 @@ function Signup() {
 	const auth = getAuth();
 
 	return (
-		<div className="SignIn">
-			<div className="Column">
-			<form className="SignInForm my-auto"
+		<div className="container">
+			<form
+				className="SignInForm"
 				onSubmit={onSubmitForm}
-				spellcheck="false">
+				spellCheck="false">
+
 				<h1 className="mt-0">Sign In</h1>
 				<input
-					type="text"
-					className="Form my-5"
-					value={email}
-					onChange={e => setEmail(e.target.value)}
+					type="email"
+					className="Form"
+					ref={emailRef}
 					placeholder="Email">
 				</input>
 				<input
 					type="password"
-					className="Form my-5"
-					value={password}
-					onChange={e => setPassword(e.target.value)}
+					className="Form"
+					ref={passwordRef}
 					placeholder="Password">
 				</input>
 				<button>SignIn</button>
 			</form>
-			<p>{error}</p>
-			</div>
+		
+			<Link className="text-links" to="/frends">Dont have an accout? Sign up.</Link>
+			<span className="error-message">{error}</span>
 		</div>
   );
 }

@@ -7,12 +7,13 @@ function PostCreation() {
 		e.preventDefault();
 		try {
 			const body = { description };
-			const response = await fetch("https://www.sotirismorfakidis.xyz/api/posts", {
+			const response = await fetch("https://www.sotirismorfakidis.com/api/posts", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(body)
 			});
 
+		console.log(response);
 		window.location = "/";
 		} catch (err) {
 			console.error(err.message);
