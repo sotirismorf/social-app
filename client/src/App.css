@@ -59,6 +59,11 @@
 	box-shadow: 0px 0px 5px #101010;
 }
 
+.not-found {
+	margin-top: 15%;
+	text-align: center;
+}
+
 .Line {
 	display: flex;
 	flex-direction:row;
@@ -94,6 +99,11 @@
 .text-links:hover {
 	color: #D3D3D3;
 	transition: 0.1s;
+}
+
+.error-message{
+	font-weight: bold;
+	color: #ee531a;
 }
 
 a {

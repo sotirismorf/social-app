@@ -3,6 +3,8 @@ import './App.css';
 import Home from './components/Home.js'
 import Friends from './components/Friends.js'
 import SignIn from './pages/SignIn.js'
+import SignUp from './pages/SignUp.js'
+import NotFound from './pages/NotFound'
 
 function App() {
 	return (
@@ -11,7 +13,9 @@ function App() {
 				<Switch>
 					<Route path="/" exact component={() => <Home />} />
 					<Route path="/friends" exact component={() => <Friends />} />
-					<Route path="/login" exact component={() => <SignIn />} />
+					<Route path="/signin" exact component={() => <SignIn />} />
+					<Route path="/signup" exact component={() => <SignUp />} />
+					<Route component={() => <NotFound />} />
 				</Switch>
 			</Router>
 		</div>

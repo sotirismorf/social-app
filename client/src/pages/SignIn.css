@@ -1,11 +1,13 @@
 html, body {
 	height: 100%;
-	display: flex;
-	justify-content: center;
 }
 
 .container {
-	transform: translateY(50%);
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
 	width: 450px;
 	display: flex;
 	justify-content: center;

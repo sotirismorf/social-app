@@ -5,7 +5,7 @@ import { CgProfile } from "react-icons/cg";
 function User(props) {
 	return(
 		<IconContext.Provider value={{ size:"2em", className: "react-icons" }}>
-			<Link className="icon-btn" to="/login"><CgProfile /></Link>
+			<Link className="icon-btn" to="/signin"><CgProfile /></Link>
 		</IconContext.Provider>
 	);
 

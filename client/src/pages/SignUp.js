@@ -1,14 +1,12 @@
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import "./SignIn.css"
 import "../firebase"
 import React, { useRef, useState } from "react"
 import { Link, useHistory } from "react-router-dom"
 
-function SignIn() {
+function SignUp() {
 	const emailRef = useRef()
 	const passwordRef = useRef()
-	//const [email, setEmail] = useState("");
-	//const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
 
 	const history = useHistory();
@@ -16,7 +14,7 @@ function SignIn() {
 	async function onSubmitForm(e) {
 		e.preventDefault();
 
-		signInWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value)
+		createUserWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value)
 			.then((userCredential) => {
 				const user = userCredential.user;
 				console.log("hello there")
@@ -24,8 +22,11 @@ function SignIn() {
 			})
 			.catch((error) => {
 				const errorCode = error.code;
-				const errorMessage = error.message;
-				setError("Failed to log in");
+				//const errorMessage = error.message;
+				//setError("Failed to log in");
+				if (errorCode === "auth/invalid-email"){
+					setError("Please enter a valid email")
+				}
 			});
 	};
 
@@ -38,7 +39,7 @@ function SignIn() {
 				onSubmit={onSubmitForm}
 				spellCheck="false">
 
-				<h1 className="mt-0">Sign In</h1>
+				<h1 className="mt-0">Create an Account</h1>
 				<input
 					type="email"
 					className="Form"
@@ -51,13 +52,19 @@ function SignIn() {
 					ref={passwordRef}
 					placeholder="Password">
 				</input>
-				<button class="bold">LOG IN</button>
+				<input
+					type="password"
+					className="Form"
+					ref={passwordRef}
+					placeholder="Confirm Password">
+				</input>
+				<button className="bold">SIGN UP</button>
 			</form>
 		
-			<Link className="text-links" to="/signup">Dont have an accout? Sign up.</Link>
+			<Link className="text-links" to="/signin">Already have an accout? Sign In..</Link>
 			<span className="error-message">{error}</span>
 		</div>
   );
 }
 
-export default SignIn;
+export default SignUp;
