@@ -78,6 +78,10 @@
 	align-items: center;
 }
 
+.dropdown-item:hover {
+	background: #ee531a;
+}
+
 .nav-buttons {
 	display: flex;	
 }
@@ -106,9 +110,8 @@
 	color: #ee531a;
 }
 
-a {
-	text-decoration: none;
-}
+a {text-decoration: none;color: white;}
+a:visited {color: white;}
 
 h1 {
 	margin: 0;

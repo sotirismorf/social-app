@@ -1,5 +1,6 @@
 import Button from './Button.js'
 import User from './User'
+import Dropdown from './Dropdown'
 
 function Navigation(props) {
 	return (
