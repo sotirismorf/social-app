@@ -1,14 +1,13 @@
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import "./SignIn.css"
-import "../firebase"
 import React, { useRef, useState } from "react"
 import { Link, useHistory } from "react-router-dom"
 
+import { useAuth } from "../contexts/AuthContext"
+import "./SignIn.css"
+
 function SignIn() {
+	const { login } = useAuth();
 	const emailRef = useRef()
 	const passwordRef = useRef()
-	//const [email, setEmail] = useState("");
-	//const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
 
 	const history = useHistory();
@@ -16,20 +15,44 @@ function SignIn() {
 	async function onSubmitForm(e) {
 		e.preventDefault();
 
+		try {
+			await login(emailRef.current.value, passwordRef.current.value)
+			history.push("/")
+		} catch (error) {
+			console.log(error)
+			const errorCode = error.code;
+			//const errorMessage = error.message;
+			if (errorCode === "auth/invalid-email"){
+				setError("Please enter a valid email");
+			} else if (errorCode === "auth/internal-error"){ 
+				setError("Please type your Email and Password");
+			} else if (errorCode === "auth/user-not-found"){ 
+				setError("Wrong Email or Password");
+			}
+
+		}
+		/*
 		signInWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value)
 			.then((userCredential) => {
 				const user = userCredential.user;
-				console.log("hello there")
 				history.push("/")
 			})
 			.catch((error) => {
 				const errorCode = error.code;
-				const errorMessage = error.message;
-				setError("Failed to log in");
+				//const errorMessage = error.message;
+				console.log(errorCode);
+				if (errorCode === "auth/invalid-email"){
+					setError("Please enter a valid email");
+				} else if (errorCode === "auth/internal-error"){ 
+					setError("Please type your Email and Password");
+				} else if (errorCode === "auth/user-not-found"){ 
+					setError("Wrong Email or Password");
+				}
 			});
+			*/
 	};
 
-	const auth = getAuth();
+	//const auth = getAuth();
 
 	return (
 		<div className="container">
