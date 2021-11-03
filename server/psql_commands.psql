@@ -1,4 +1,13 @@
-create table users(
-	id serial primary key,
-	username varchar(255) unique not null
+CREATE DATABASE nameofdatabase;
+
+CREATE TABLE author (
+    authorid   serial  PRIMARY KEY,
+    username   text    UNIQUE
+);
+
+CREATE TABLE posts (
+    id           serial  PRIMARY KEY,
+    parent_post  int     REFERENCES posts,
+    authorid     int     NOT NULL REFERENCES author,
+    body         text    NOT NULL
 );

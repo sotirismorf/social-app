@@ -8,7 +8,7 @@ function Feed() {
 
 	const getPosts = async () => {
 		try {
-		const response = await fetch("https://www.sotirismorfakidis.com/api/posts");
+		const response = await fetch('/api/posts');
 		const jsonData = await response.json();
 
 		setPosts(jsonData);
@@ -25,7 +25,7 @@ function Feed() {
 	return (
 		<div className="Feed">
 			<PostCreation />
-			{posts.slice(0).reverse().map(post => (<Post description={post.description}/>))}
+			{posts.slice(0).reverse().map(post => (<Post username={post.username} description={post.body}/>))}
 		</div>
   );
 }

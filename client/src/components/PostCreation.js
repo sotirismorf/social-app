@@ -1,16 +1,17 @@
 import { useState } from "react";
 
 function PostCreation() {
-	const [description, setDescription] = useState("");
+	const [body, setBody] = useState("");
+	const authorid = 2;
 
 	const onSubmitForm = async e => {
 		e.preventDefault();
 		try {
-			const body = { description };
-			const response = await fetch("https://www.sotirismorfakidis.com/api/posts", {
+			const rbody = { body , authorid };
+			const response = await fetch("/api/posts", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify(body)
+				body: JSON.stringify(rbody)
 			});
 
 		console.log(response);
@@ -26,8 +27,8 @@ function PostCreation() {
 			<form className="Line" onSubmit={onSubmitForm}>	
 				<input
 					type="text"
-					value={description}
-					onChange={e => setDescription(e.target.value)}
+					value={body}
+					onChange={e => setBody(e.target.value)}
 					placeholder="Type something...">
 				</input>
 				<button>Post</button>
