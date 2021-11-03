@@ -23,7 +23,7 @@ function PostCreation() {
 
 	return (
 		<div className="Box">
-			<h1 class="mt-0">Post Something!</h1>
+			<h1 className="mt-0">Post Something!</h1>
 			<form className="Line" onSubmit={onSubmitForm}>	
 				<input
 					type="text"

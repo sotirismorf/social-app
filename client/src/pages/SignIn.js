@@ -31,25 +31,6 @@ function SignIn() {
 			}
 
 		}
-		/*
-		signInWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value)
-			.then((userCredential) => {
-				const user = userCredential.user;
-				history.push("/")
-			})
-			.catch((error) => {
-				const errorCode = error.code;
-				//const errorMessage = error.message;
-				console.log(errorCode);
-				if (errorCode === "auth/invalid-email"){
-					setError("Please enter a valid email");
-				} else if (errorCode === "auth/internal-error"){ 
-					setError("Please type your Email and Password");
-				} else if (errorCode === "auth/user-not-found"){ 
-					setError("Wrong Email or Password");
-				}
-			});
-			*/
 	};
 
 	//const auth = getAuth();
@@ -74,7 +55,7 @@ function SignIn() {
 					ref={passwordRef}
 					placeholder="Password">
 				</input>
-				<button class="bold">LOG IN</button>
+				<button className="bold">LOG IN</button>
 			</form>
 		
 			<Link className="text-links" to="/signup">Dont have an accout? Sign up.</Link>

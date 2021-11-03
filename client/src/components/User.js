@@ -6,7 +6,8 @@ import { useAuth } from "../contexts/AuthContext"
 import Dropdown from './Dropdown'
 
 function User(props) {
-	const { currentUser, logout } = useAuth()
+	const { currentUser } = useAuth()
+	//const { currentUser, logout } = useAuth()
 
 	return(
 

@@ -1,6 +1,4 @@
 import { Link, useHistory } from "react-router-dom"
-import { IconContext } from "react-icons";
-import { CgProfile } from "react-icons/cg";
 
 import { useAuth } from "../contexts/AuthContext"
 import "./Dropdown.css"

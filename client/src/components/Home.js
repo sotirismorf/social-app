@@ -5,7 +5,7 @@ function Home() {
 	return (
 		<div className="Home">
 			<Navigation pathname="/"/>
-			<div class="center">
+			<div className="center">
 				<Feed />
 			</div>
 		</div>

@@ -25,7 +25,11 @@ function Feed() {
 	return (
 		<div className="Feed">
 			<PostCreation />
-			{posts.slice(0).reverse().map(post => (<Post username={post.username} description={post.body}/>))}
+			{posts.slice(0).reverse().map(post => (
+				<Post username={post.username} 
+				description={post.body}
+				key={post.id}
+			/>))}
 		</div>
   );
 }
