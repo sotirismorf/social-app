@@ -8,6 +8,7 @@ import Dropdown from './Dropdown'
 function User(props) {
 	const { currentUser } = useAuth()
 	//const { currentUser, logout } = useAuth()
+	console.log(currentUser)
 
 	return(
 
@@ -15,7 +16,7 @@ function User(props) {
 			<Dropdown />
 			<span>{currentUser.email}</span>
 			<IconContext.Provider value={{ size:"2em", className: "react-icons" }}>
-				<Link className="icon-btn" to="/login"><CgProfile /></Link>
+				<Link className="icon-btn" to="/settings/profile"><CgProfile /></Link>
 			</IconContext.Provider>
 		</div>
 	);

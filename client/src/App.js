@@ -16,11 +16,12 @@ function App() {
 			<Router>
 				<AuthProvider>
 					<Switch>
-						<PrivateRoute path="/"            exact component={() => <Home />} />
-						<PrivateRoute path="/u/:username" exact component={() => <Profile />} />
-						<PrivateRoute path="/friends"     exact component={() => <Friends />} />
-						<PublicRoute  path="/login"       exact component={() => <SignIn />} />
-						<PublicRoute  path="/signup"      exact component={() => <SignUp />} />
+						<PrivateRoute path="/"                 exact component={() => <Home />} />
+						<PrivateRoute path="/u/:username"      exact component={() => <Profile />} />
+						<PrivateRoute path="/settings/profile" exact component={() => <Profile />} />
+						<PrivateRoute path="/friends"          exact component={() => <Friends />} />
+						<PublicRoute  path="/login"            exact component={() => <SignIn />} />
+						<PublicRoute  path="/signup"           exact component={() => <SignUp />} />
 						<Route component={() => <NotFound />} />
 					</Switch>
 				</AuthProvider>
