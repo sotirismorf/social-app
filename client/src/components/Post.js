@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { BiLike , BiDislike , BiComment } from 'react-icons/bi';
+import { BiLike , BiDislike } from 'react-icons/bi';
 import { FaRegComment } from 'react-icons/fa'
 import { IconContext } from 'react-icons';
 

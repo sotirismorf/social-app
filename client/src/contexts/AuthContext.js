@@ -29,21 +29,6 @@ export function AuthProvider({ children }) {
     return auth.currentUser
   }
 
-  function isAdmin() {
-    return auth.currentUser.getIdTokenResult()
-    .then((idTokenResult) => {
-      if (!!idTokenResult.claims.admin) {
-        return true
-      } else {
-        return false
-      }
-    })
-  }
-
-  function isEditor() {
-
-  }
-
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
       setCurrentUser(user)
