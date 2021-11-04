@@ -9,7 +9,6 @@ function Profile() {
 	const { currentUser , updateUsername} = useAuth()
 	const [name,setName] = useState(currentUser.displayName);
 	const [phone,setPhone] = useState(currentUser.phoneNumber ? currentUser.phoneNumber : "");
-	console.log(currentUser)
 
 	async function onSubmitForm(e) {
 		e.preventDefault();
@@ -32,8 +31,23 @@ function Profile() {
 
 			<div className="center">
 			<div className="Box">
-				<h1>{currentUser.displayName}</h1>
-				<h3>{currentUser.email}</h3>
+				<h1>Public profile</h1>
+				<h3>Name {currentUser.displayName}</h3>
+				<form onSubmit={onSubmitForm} >
+					<input
+						className="one"
+						value={name}
+						onChange={e => setName(e.target.value)}>
+					</input>
+					<input
+						className="two"
+						value={phone}
+						onChange={e => setPhone(e.target.value)}
+						type="tel"
+						placeholder="no phone number">
+					</input>
+					<button>Update Username</button>
+				</form>
 			</div>
 			</div>
 

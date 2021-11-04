@@ -5,7 +5,8 @@ import Home from './components/Home.js'
 import Friends from './components/Friends.js'
 import SignIn from './pages/SignIn'
 import Profile from './pages/Profile'
-import SignUp from './pages/SignUp.js'
+import SignUp from './pages/SignUp'
+import Settings from './pages/Settings'
 import NotFound from './pages/NotFound'
 import PrivateRoute from "./components/routes/PrivateRoute"
 import PublicRoute from "./components/routes/PublicRoute"
@@ -18,7 +19,7 @@ function App() {
 					<Switch>
 						<PrivateRoute path="/"                 exact component={() => <Home />} />
 						<PrivateRoute path="/u/:username"      exact component={() => <Profile />} />
-						<PrivateRoute path="/settings/profile" exact component={() => <Profile />} />
+						<PrivateRoute path="/settings/profile" exact component={() => <Settings/>} />
 						<PrivateRoute path="/friends"          exact component={() => <Friends />} />
 						<PublicRoute  path="/login"            exact component={() => <SignIn />} />
 						<PublicRoute  path="/signup"           exact component={() => <SignUp />} />

@@ -8,7 +8,7 @@ import Dropdown from './Dropdown'
 function User(props) {
 	const { currentUser } = useAuth()
 	//const { currentUser, logout } = useAuth()
-	console.log(currentUser)
+	//console.log(currentUser)
 
 	return(
 

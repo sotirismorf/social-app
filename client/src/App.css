@@ -136,7 +136,7 @@ button {
 	border: none;
 }
 
-.abutton {
+.button-regular {
 	border-radius: 20px;
 	border-style: none;
 	padding: 15px;
@@ -145,11 +145,11 @@ button {
 	background-color: #ee531a;
 }
 
-.abutton:hover {
+.button-regular:hover {
 	background-color: coral; 
 }
 
-.abutton:active {
+.button-regular:active {
 	background-color: white;
 }
 
