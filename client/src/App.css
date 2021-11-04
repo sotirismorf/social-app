@@ -8,11 +8,12 @@
 .my-10 {margin-top:10px;margin-bottom:10px;}
 
 .mt-0 {margin-top:0;}
-.mb-0 {margin-bottom:0;}
+.mt-10 {margin-top:10px;}
 
 .mr-5 {margin-right:5px;}
 .mr-10 {margin-right:10px;}
 
+.mb-0 {margin-bottom:0;}
 .mb-5 {margin-bottom:5px;}
 .mb-10 {margin-bottom:10px;}
 
@@ -37,6 +38,10 @@
 	left: 0;
 	top: 0;
 	bottom: 0;
+}
+
+.fl-r {
+	float: right;
 }
 
 .circle {
@@ -67,8 +72,8 @@
 	overflow-wrap: break-word;
 	background: #101010;
 	padding: 15px 20px 10px 20px;
-	margin-top: 15px;
-	margin-bottom: 15px;
+	margin-top: 8px;
+	margin-bottom: 8px;
 	border-radius: 10px;
 	box-shadow: 0px 0px 5px #101010;
 }
@@ -90,6 +95,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	margin-bottom: 8px;
 }
 
 .dropdown-item:hover {
@@ -137,9 +143,9 @@ button {
 }
 
 .button-regular {
-	border-radius: 20px;
+	border-radius: 10px;
 	border-style: none;
-	padding: 15px;
+	padding: 5px 10px;
 	font-size: large;
 	transition: 0.2s;
 	background-color: #ee531a;
@@ -153,9 +159,29 @@ button {
 	background-color: white;
 }
 
+textarea {
+	transition:height 0.2s ease-out;
+	background: #222222;
+	width: 100%;
+	height: 50px;
+	border-radius: 10px;
+	flex-grow: 1;
+	resize: none;
+	font-size: large;
+	box-sizing: border-box;
+	padding: 10px;
+	border: none;
+	outline: none;
+	font-family: inherit;
+}
+
+textarea:focus {
+	height: 100px;
+}
+
 input {
 	color: white;
-	border-radius: 20px;
+	border-radius: 10px;
 	border-style: none;
 	font-size: large;
 	background-color: #060606;

@@ -2,7 +2,15 @@ import { useState } from "react";
 
 function PostCreation() {
 	const [body, setBody] = useState("");
+	const [charNum, setCharNum] = useState(0);
 	const authorid = 2;
+
+	const recalculate = e => {
+		if (e.target.value.length < 256) {
+			setBody(e.target.value)
+			setCharNum(e.target.value.length)
+		}
+	}
 
 	const onSubmitForm = async e => {
 		e.preventDefault();
@@ -23,15 +31,17 @@ function PostCreation() {
 
 	return (
 		<div className="Box">
-			<h1 className="mt-0">Post Something!</h1>
-			<form className="Line" onSubmit={onSubmitForm}>	
-				<input
+			<h3 className="mt-0 mb-10 center">Create a public post</h3>
+			<form className="" onSubmit={onSubmitForm}>	
+				<textarea
+					className="mb-5"
 					type="text"
 					value={body}
-					onChange={e => setBody(e.target.value)}
+					onChange={recalculate}
 					placeholder="Type something...">
-				</input>
-				<button>Post</button>
+				</textarea>
+				<button className="button-regular">POST</button>
+				<span className="fl-r">{charNum}/255 characters</span>
 			</form>
 		</div>
   );
